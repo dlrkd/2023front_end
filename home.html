@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <button onclick="add()">추가</button>
+    <button onclick="del()">삭제</button>
+    <button onclick="save()">저장</button>
+    <script>
+        function add() {
+            const table = document.getElementById('record');
+            const newRow = table.insertRow();
+  
+            const newCell1 = newRow.insertCell(0);
+            const newCell2 = newRow.insertCell(1);
+            const newCell3 = newRow.insertCell(2);
+            const newCell4 = newRow.insertCell(3);
+            const newCell5 = newRow.insertCell(4);
+            const newCell6 = newRow.insertCell(5);
+            const newCell7 = newRow.insertCell(6);
+            const newCell8 = newRow.insertCell(7);
+            const newCell9 = newRow.insertCell(8);
+            const newCell0 = newRow.insertCell(9);
+            const newCell11 = newRow.insertCell(10);
+            const newCell12 = newRow.insertCell(11);
+  
+            // 교양,전공
+            var selectBox = document.createElement("select");
+            var study_culture = document.createElement("option");
+            study_culture.text = "교양";
+            var study_major = document.createElement("option");
+            study_major.text = "전공";
+            selectBox.add(study_culture);
+            selectBox.add(study_major);
+            newCell1.appendChild(selectBox);
+
+            // 필수,선택 
+            var selectBox = document.createElement("select");
+            var select_essential = document.createElement("option");
+            select_essential.text = "필수";
+            var select_choice = document.createElement("option");
+            select_choice.text = "선택";
+            selectBox.add(select_essential);
+            selectBox.add(select_choice);
+            newCell2.appendChild(selectBox);
+            
+            //과목명
+            var Subname = document.createElement("input");
+            Subname.type = "text";
+            Subname.name = "subname";
+            Subname.size = "10";
+            newCell3.appendChild(Subname);
+            
+            //학점(1,2,3 만 선택가능)
+            var selectBox = document.createElement("select");
+            var select_score1 = document.createElement("option");
+            select_score1.text = "1";
+            var select_score2 = document.createElement("option");
+            select_score2.text = "2";
+            var select_score3 = document.createElement("option");
+            select_score3.text = "3";
+            selectBox.add(select_score1);
+            selectBox.add(select_score2);
+            selectBox.add(select_score3);
+            newCell4.appendChild(selectBox);
+
+            var score = document.createElement("input");
+            score.type = "text";
+            score.size = "5"
+            score.addEventListener("input", function () {
+                this.value = this.value.replace(/[^0-9]/g, ''); // 숫자 이외의 문자를 제거
+            });
+            newCell5.appendChild(score);
+
+
+        }
+    </script>
+    <table id="record" border="1">
+        <th>이수</th>
+        <th>필수</th>
+        <th>과목명</th>
+        <th>학점</th>
+        <th>출석점수</th>
+        <th>과제점수</th>
+        <th>중간고사</th>
+        <th>기말고사</th>
+        <th>총점</th>
+        <th>평균</th>
+        <th>성적</th>
+        </table>
+</body>
+</html>
