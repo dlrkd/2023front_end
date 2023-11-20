@@ -7,7 +7,7 @@
     <script>
         function add() {
             const table = document.getElementById('record');
-            const newRow = table.insertRow();
+            const newRow = table.insertRow(1);
   
             const newCell1 = newRow.insertCell(0);
             const newCell2 = newRow.insertCell(1);
@@ -85,6 +85,7 @@
         <th>총점</th>
         <th>평균</th>
         <th>성적</th>
+        <tr><td colspan="3">합계</td></tr>
         </table>
 </body>
 </html>
