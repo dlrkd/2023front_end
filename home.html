@@ -70,7 +70,31 @@
             });
             newCell5.appendChild(score);
 
+            var score = document.createElement("input");
+            score.type = "text";
+            score.size = "5"
+            score.addEventListener("input", function () {
+                this.value = this.value.replace(/[^0-9]/g, ''); // 숫자 이외의 문자를 제거
+            });
+            newCell6.appendChild(score);
 
+            var score = document.createElement("input");
+            score.type = "text";
+            score.size = "5"
+            score.addEventListener("input", function () {
+                this.value = this.value.replace(/[^0-9]/g, ''); // 숫자 이외의 문자를 제거
+            });
+            newCell7.appendChild(score);
+
+            var score = document.createElement("input");
+            score.type = "number";
+            score.size = "4"
+            newCell8.appendChild(score);
+
+        }
+
+        function save() {
+            
         }
     </script>
     <table id="record" border="1">
@@ -85,7 +109,17 @@
         <th>총점</th>
         <th>평균</th>
         <th>성적</th>
-        <tr><td colspan="3">합계</td></tr>
+        <tr>
+            <td colspan="3">합계</td>
+            <td size="5"></td>
+            <td size="5"></td>
+            <td size="5"></td>
+            <td size="5"></td>
+            <td size="5"></td>
+            <td size="5"></td>
+            <td size="5"></td>
+            <td size="5"></td>
+        </tr>
         </table>
 </body>
 </html>
